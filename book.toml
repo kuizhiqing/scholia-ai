@@ -1,0 +1,42 @@
+[book]
+authors = ["kuizhiqing"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Scholia AI"
+description = "AI-generated structured notes based on my interests."
+
+[build]
+build-dir = "book"
+create-missing = false
+
+# KaTeX math rendering. Pre-rendering means the generated HTML contains the
+# math markup directly, so the served pages do not depend on a CDN at runtime.
+[preprocessor.katex]
+after = ["links"]
+pre-render = true
+# Allow `\\` line breaks inside display math.
+trust = true
+# Uncomment after creating `src/macros.txt` with custom \def lines.
+# macros = "src/macros.txt"
+
+[output.html]
+default-theme = "light"
+preferred-dark-theme = "navy"
+git-repository-url = "https://github.com/kuizhiqing/scholia-ai"
+edit-url-template = "https://github.com/kuizhiqing/scholia-ai/edit/main/{path}"
+site-url = "/scholia-ai/"
+
+[output.html.search]
+enable = true
+limit-results = 30
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 2
+boost-paragraph = 1
+expand = true
+heading-split-level = 3
+
+[output.html.fold]
+enable = true
+level = 1
